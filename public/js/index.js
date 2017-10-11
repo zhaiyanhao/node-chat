@@ -14,3 +14,7 @@ socket.on('disconnect',function () {
 socket.on('newEmail',function (e) {
     console.log(e);
 });
+
+socket.on('sendEmail',function (e) {
+    console.log(e);
+});
