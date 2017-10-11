@@ -23,11 +23,16 @@ io.on('connection',(socket)=>{
 
     socket.on('createEmail',(e)=>{
         console.log(e);
-        io.emit('sendEmail',{
+/*        io.emit('sendEmail',{
             name:e.name,
             email:e.email
 
-        })
+        });*/
+        socket.broadcast.emit('sendEmail',{
+            name:e.name,
+            email:e.email
+
+        });
     });
     console.log('new user connect');
     socket.on('disconnect',()=>{
